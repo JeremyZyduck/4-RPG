@@ -156,13 +156,13 @@ MonoBehaviour:
   tilemap: {fileID: 55286214}
   tile: {fileID: 11400000, guid: 7111f0b0792c8e645929e3710d2e0f46, type: 2}
   openColor: {r: 1, g: 1, b: 1, a: 1}
-  closedColor: {r: 0, g: 0, b: 0, a: 1}
+  closedColor: {r: 1, g: 0.93057793, b: 0, a: 1}
   pathColor: {r: 1, g: 0, b: 0, a: 1}
   currentColor: {r: 0, g: 1, b: 0.013458014, a: 1}
-  startColor: {r: 0, g: 0.08528137, b: 1, a: 1}
-  goalColor: {r: 1, g: 0, b: 0.7187414, a: 1}
   canvas: {fileID: 1868466295}
   debugTextPrefab: {fileID: 283795653}
+  sTile: {fileID: 11400000, guid: bf2b4ab21d2c5514293b451c3bb162c6, type: 2}
+  eTile: {fileID: 11400000, guid: 36038cbe0771aca488d8654a0572a3df, type: 2}
 --- !u!4 &47611982
 Transform:
   m_ObjectHideFlags: 0
@@ -3009,8 +3009,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.15
+  m_fontSizeBase: 0.15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3194,12 +3194,12 @@ PrefabInstance:
     - target: {fileID: 7219266616472297735, guid: dadc2f3f609a00d4681a36182659b372,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7219266616472297735, guid: dadc2f3f609a00d4681a36182659b372,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7219266616472297735, guid: dadc2f3f609a00d4681a36182659b372,
         type: 3}
@@ -7580,8 +7580,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.15
+  m_fontSizeBase: 0.15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7837,10 +7837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fSpeed: 5
   v2Direction: {x: 0, y: 0}
-  camera: {fileID: 838479103}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!70 &1309435820
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8089,8 +8085,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.15
+  m_fontSizeBase: 0.15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8169,9 +8165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 962227912}
+  DebugTilemap: {fileID: 55286214}
   tiles:
-  - {fileID: 11400000, guid: 346999ccdf91d0248b6d465bb38ae031, type: 2}
-  - {fileID: 11400000, guid: 3e84b42f8a83f1d4ea390cf64910ad0f, type: 2}
+  - {fileID: 11400000, guid: bf2b4ab21d2c5514293b451c3bb162c6, type: 2}
+  - {fileID: 11400000, guid: 36038cbe0771aca488d8654a0572a3df, type: 2}
   - {fileID: 11400000, guid: 7111f0b0792c8e645929e3710d2e0f46, type: 2}
   - {fileID: 11400000, guid: ae4138090b956e74d9331c77cdf45260, type: 2}
   - {fileID: 11400000, guid: 207208ba8d653a7408f109d10df8aa45, type: 2}
@@ -8281,8 +8278,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.15
+  m_fontSizeBase: 0.15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

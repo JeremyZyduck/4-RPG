@@ -28,7 +28,7 @@ public class AStarDebug : MonoBehaviour
     private Tile tile;
 
     [SerializeField]
-    private Color openColor, closedColor, pathColor, currentColor, startColor, goalColor;
+    private Color openColor, closedColor, pathColor, currentColor;
 
     private List<GameObject> debugObjects = new List<GameObject>();
 
@@ -37,8 +37,12 @@ public class AStarDebug : MonoBehaviour
 
     [SerializeField]
     private GameObject debugTextPrefab;
+    [SerializeField]
+    private Tile sTile;
+    [SerializeField]
+    private Tile eTile;
 
-    public void CreateTiles(HashSet<Node> openList, HashSet<Node> closedList,Dictionary<Vector3Int,Node> allNodes, Vector3Int start, Vector3Int goal, Stack<Vector3> path = null)
+    public void CreateTiles(HashSet<Node> openList, HashSet<Node> closedList,Dictionary<Vector3Int,Node> allNodes, Vector3Int start, Vector3Int goal, Stack<Vector3Int> path = null)
     {
 
         foreach (GameObject go in debugObjects)
@@ -58,27 +62,31 @@ public class AStarDebug : MonoBehaviour
 
         if (path != null)
         {
-            foreach (Vector3 positem in path)
+            foreach (Vector3Int positem in path)
             {
                 if (positem != start && positem != goal)
                 {
-                    //ColorTile(positem, pathColor);
+                    ColorTile(positem, pathColor);
                 }
 
             }
         }
 
-        ColorTile(start, startColor);
-        ColorTile(goal, goalColor);
+        tilemap.SetTile(start, sTile);
+        tilemap.SetTile(goal, eTile);
+        //ColorTile(goal, goalColor);
 
         foreach (KeyValuePair<Vector3Int, Node> item in allNodes)
         {
             if (item.Value.Parent != null)
             {
-                GameObject go = Instantiate(debugTextPrefab, canvas.transform);
-                go.transform.position = grid.CellToWorld(item.Key);
-                debugObjects.Add(go);
-                GenerateDebugText(item.Value, go.GetComponent<DebugText>());
+                if (item.Key != goal)
+                {
+                    GameObject go = Instantiate(debugTextPrefab, canvas.transform);
+                    go.transform.position = grid.CellToWorld(item.Key);
+                    debugObjects.Add(go);
+                    GenerateDebugText(item.Value, go.GetComponent<DebugText>());
+                }
             }
 
         }
@@ -112,10 +120,6 @@ public class AStarDebug : MonoBehaviour
         {
             tilemap.SetTile(item, null);
         }
-        GameObject[] debug = GameObject.FindGameObjectsWithTag("Debug");
-        foreach (GameObject item in debug)
-        {
-            //Destroy(item);
-        }
+        tilemap.ClearAllTiles();
     }
 }

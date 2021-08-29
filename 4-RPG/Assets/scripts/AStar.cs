@@ -14,12 +14,16 @@ public class AStar : MonoBehaviour
 
     [SerializeField]
     private Tilemap tilemap;
+    [SerializeField]
+    private Tilemap DebugTilemap;
 
     [SerializeField]
     private Tile[] tiles;
 
     [SerializeField]
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     private Camera camera;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
     [SerializeField]
     private LayerMask layerMask;
@@ -34,7 +38,7 @@ public class AStar : MonoBehaviour
 
     private List<Vector3Int> blockedTiles = new List<Vector3Int>();
 
-    private Stack<Vector3> path;
+    private Stack<Vector3Int> path;
 
     [SerializeField]
     private TileBase blocked;
@@ -58,6 +62,11 @@ public class AStar : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Algorithm();
+        }
+
         if (Input.GetKeyDown(KeyCode.J))
         {
             Reset();
@@ -67,10 +76,8 @@ public class AStar : MonoBehaviour
         
     }
 
-    public Stack<Vector3> Algorithm(Vector3 start, Vector3 goal)
+    public Stack<Vector3Int> Algorithm()
     {
-        startPos = tilemap.WorldToCell(start);
-        goalPos = tilemap.WorldToCell(goal);
         current = GetNode(startPos);
         openList = new HashSet<Node>();
         closedList = new HashSet<Node>();
@@ -89,14 +96,14 @@ public class AStar : MonoBehaviour
         AStarDebug.thisInstance.CreateTiles(openList, closedList, allNodes, startPos, goalPos, path);
         if (path != null)
         {
-            foreach (Vector3 pos in path)
+            foreach (Vector3Int pos in path)
             {
                 if(pos != goalPos)
                 {
-                    //tilemap.SetTile(Mathf.FloorToInt(pos), tiles[2]);
+                    DebugTilemap.SetTile(pos, tiles[2]);
                 }
             }
-            return path;
+            //return path;
         }
         
         
@@ -233,7 +240,7 @@ public class AStar : MonoBehaviour
     {
         if (tileType == TileType.NONWALKABLE)
         {
-            tilemap.SetTile(clickPos, blocked);
+            DebugTilemap.SetTile(clickPos, blocked);
             blockedTiles.Add(clickPos);
         }
         else
@@ -242,7 +249,7 @@ public class AStar : MonoBehaviour
             {
                 if (start)
                 {
-                    tilemap.SetTile(startPos, tiles[4]);
+                    DebugTilemap.SetTile(startPos, tiles[0]);
                 }
                 start = true;
                 startPos = clickPos;
@@ -251,12 +258,12 @@ public class AStar : MonoBehaviour
             {
                 if (goal)
                 {
-                    tilemap.SetTile(goalPos, tiles[4]);
+                    DebugTilemap.SetTile(goalPos, tiles[1]);
                 }
                 goal = true;
                 goalPos = clickPos;
             }
-            tilemap.SetTile(clickPos, tiles[(int)tileType]);
+            DebugTilemap.SetTile(clickPos, tiles[(int)tileType]);
         }
         //changedTiles.Add(tilemap.WorldToCell(camera.ScreenToWorldPoint(Input.mousePosition)));
         
@@ -276,11 +283,11 @@ public class AStar : MonoBehaviour
         return true;
     }
 
-    private Stack<Vector3> GeneratePath(Node current)
+    private Stack<Vector3Int> GeneratePath(Node current)
     {
         if (current.Position == goalPos)
         {
-            Stack<Vector3> finalPath = new Stack<Vector3>();
+            Stack<Vector3Int> finalPath = new Stack<Vector3Int>();
 
             while(current.Position != startPos)
             {
@@ -299,21 +306,22 @@ public class AStar : MonoBehaviour
         foreach (Vector3Int item in changedTiles)
         {
             //remove
-            tilemap.SetTile(item, tiles[4]);
+            DebugTilemap.SetTile(item, tiles[4]);
         }
 
-        //foreach (Vector3Int item in path)
-        //{
+        foreach (Vector3Int item in path)
+        {
             //remove
-           // tilemap.SetTile(item, tiles[4]);
-        //}
+            //DebugTilemap.SetTile(item, tiles[4]);
+        }
 
-        tilemap.SetTile(startPos, tiles[4]);
-        tilemap.SetTile(goalPos, tiles[4]);
+        //DebugTilemap.SetTile(startPos, tiles[4]);
+        //DebugTilemap.SetTile(goalPos, tiles[4]);
         allNodes.Clear();
         current = null;
         path = null;
         start = false;
         goal = false;
+
     }
 }
