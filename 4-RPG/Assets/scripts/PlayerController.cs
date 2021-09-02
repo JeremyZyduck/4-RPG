@@ -6,98 +6,77 @@ public class PlayerController : Character
 {
     private Vector3 min, max;
 
-    #region PATHFINDING
-    //private Stack<Vector3> path;
-    //private Vector3 dest;
-    //private Vector3 goal;
-    //private AStar astar;
-    //[SerializeField]
-    //private Camera camera;
-    //[SerializeField]
-    //private LayerMask layerMask;
-    #endregion
+    //RB.velocity = new vector2 (movement.x, movement.y);
 
+    //[SerializeField]
+    //private Vector3 moveDirection;
+
+    [SerializeField]
+    private float speed = 10.0f;
+    private Vector2 target;
+    private Vector2 position;
+    private Camera cam;
 
     void Start()
     {
         r2dCharPhysics = GetComponent<Rigidbody2D>();
+
+        target = new Vector2(0.0f, 0.0f);
+        position = gameObject.transform.position;
+
+        cam = Camera.main;
     }
 
     protected override void Update()
     {
+        
         GetInput();
-       // if (Input.GetMouseButtonDown(1))
-       // {
-       //     RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
-       //
-       //     if (hit.collider != null)
-       //     {
-       //         Vector3 mouseWorldPos = camera.ScreenToWorldPoint(Input.mousePosition);
-       //         GetPath(mouseWorldPos);
-       //     }
-       //     }
-       // ClickToMove();
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, min.x, max.x),
-            Mathf.Clamp(transform.position.y, min.y, max.y),
-            transform.position.z);
 
+        float step = speed * Time.deltaTime;
+
+        // move sprite towards the target location
+        transform.position = Vector2.MoveTowards(transform.position, target, step);
+
+        //transform.position = transform.position + horizontal * Time.deltaTime;
         base.Update();
+    }
+
+    void OnGUI()
+    {
+        Event currentEvent = Event.current;
+        Vector2 mousePos = new Vector2();
+        Vector2 point = new Vector2();
+
+        // compute where the mouse is in world space
+        mousePos.x = currentEvent.mousePosition.x;
+        mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
+        point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0.0f));
+
+        if (Input.GetButton("Fire2"))
+        {
+            // set the target to the mouse click location
+            target = point;
+        }
+    }
+
+    private void FixedUpdate()
+    {
     }
 
     private void GetInput()
     {
-        v2Direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.W))
-        {
-            v2Direction += Vector2.up;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            v2Direction += Vector2.left;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            v2Direction += Vector2.down;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            v2Direction += Vector2.right;
-        }
+
     }
-
-
-    //public void GetPath(Vector3 goal)
-    //{
-    //    path = astar.Algorithm(transform.position, goal);
-    //    dest = path.Pop();
-    //    this.goal = goal;
-    //}
-
-    //private void ClickToMove()
-    //{
-    //    if (path != null)
-    //    {
-    //        transform.parent.position = Vector2.MoveTowards(transform.parent.position, dest, fSpeed * Time.deltaTime);
-    //
-    //        float distance = Vector2.Distance(dest, transform.parent.position);
-    //        if (distance <= 0f)
-    //        {
-    //            if (path.Count > 0)
-    //            {
-    //                dest = path.Pop();
-    //            }
-    //            else
-    //            {
-    //                path = null;
-    //            }
-    //        }
-    //    }
-    //}
 
     public void SetLimits(Vector3 min, Vector3 max)
     {
         this.min = min;
         this.max = max;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        target = gameObject.transform.position;
+        Debug.Log("Collide");
     }
 }

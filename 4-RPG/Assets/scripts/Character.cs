@@ -39,7 +39,7 @@ public abstract class Character : MonoBehaviour
 
     private void Move()
     {
-        r2dCharPhysics.velocity = v2Direction.normalized * fSpeed;
+        
     }
 
 }

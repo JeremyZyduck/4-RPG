@@ -309,14 +309,6 @@ public class AStar : MonoBehaviour
             DebugTilemap.SetTile(item, tiles[4]);
         }
 
-        foreach (Vector3Int item in path)
-        {
-            //remove
-            //DebugTilemap.SetTile(item, tiles[4]);
-        }
-
-        //DebugTilemap.SetTile(startPos, tiles[4]);
-        //DebugTilemap.SetTile(goalPos, tiles[4]);
         allNodes.Clear();
         current = null;
         path = null;

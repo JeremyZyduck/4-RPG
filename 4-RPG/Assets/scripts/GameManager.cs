@@ -7,14 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string playerName;
 
-    public void setPlayerName(string name)
-    {
-        playerName = name;
-    }
-    public string getPlayerName()
-    {
-        return playerName;
-    }
+    public void setPlayerName(string name) { playerName = name; }
+    public string getPlayerName() { return playerName; }
 
     // Start is called before the first frame update
     void Start()
