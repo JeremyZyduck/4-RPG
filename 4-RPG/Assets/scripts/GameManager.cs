@@ -6,20 +6,32 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private string playerName;
+    [SerializeField]
+    private GameObject Player;
+    [SerializeField]
+    private GameObject AStar;
 
     public void setPlayerName(string name) { playerName = name; }
     public string getPlayerName() { return playerName; }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Player = GameObject.Find("Player");
+        AStar = GameObject.Find("AStar");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FlipInputState()
     {
-        
+        if (Player.GetComponent<PlayerController>().enabled == false && AStar.GetComponent<AStar>().enabled == false)
+        {
+            Player.GetComponent<PlayerController>().enabled = true;
+            AStar.GetComponent<AStar>().enabled = true;
+        }
+        else
+        {
+            Player.GetComponent<PlayerController>().enabled = false;
+            AStar.GetComponent<AStar>().enabled = false;
+        }
     }
 
 }

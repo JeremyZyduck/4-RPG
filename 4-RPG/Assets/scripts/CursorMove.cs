@@ -13,15 +13,23 @@ public class CursorMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(mousePos.x, mousePos.y);
-        if (Input.GetButtonDown("Fire1"))
+        try
         {
-            //TODO: CHANGE COLOR
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector2(mousePos.x, mousePos.y);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                //TODO: CHANGE COLOR
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                //TODO: CHANGE COLOR
+            }
         }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            //TODO: CHANGE COLOR
+        catch
+        { 
+        //TODO: DISABLE CURSOR
         }
+        
     }
 }
