@@ -17,6 +17,15 @@ public class PlayerController : Character
     private Vector2 position;
     private Camera cam;
 
+
+    #region PATHFINDING
+    private Stack<Vector3> path;
+    private Vector3 destination;
+    private Vector3 goal;
+    [SerializeField]
+    private AStar astar;
+    #endregion
+
     void Start()
     {
         r2dCharPhysics = GetComponent<Rigidbody2D>();
@@ -31,32 +40,47 @@ public class PlayerController : Character
     {
         
         GetInput();
-
-        float step = speed * Time.deltaTime;
-
-        // move sprite towards the target location
-        transform.position = Vector2.MoveTowards(transform.position, target, step);
-
-        //transform.position = transform.position + horizontal * Time.deltaTime;
+        ClickToMove();
         base.Update();
     }
 
+    public void GetPath(Vector3 goal)
+    {
+        Debug.Log("get path started");
+        path = astar.Algorithm(transform.position, goal);
+        destination = path.Pop();
+        this.goal = goal;
+    }
+
+
+
+    private void ClickToMove()
+    {
+        if (path != null)
+        {
+            Debug.Log("movement started");
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, destination, fSpeed * Time.deltaTime);
+
+            float distance = Vector2.Distance(destination, transform.parent.position);
+
+            if (distance <= 0f)
+            {
+                if (path.Count > 0)
+                {
+                    destination = path.Pop();
+                }
+                else
+                {
+                    path = null;
+                }
+            }
+        }
+    }
+
+
+
     void OnGUI()
     {
-        Event currentEvent = Event.current;
-        Vector2 mousePos = new Vector2();
-        Vector2 point = new Vector2();
-
-        // compute where the mouse is in world space
-        mousePos.x = currentEvent.mousePosition.x;
-        mousePos.y = cam.pixelHeight - currentEvent.mousePosition.y;
-        point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0.0f));
-
-        if (Input.GetButton("Fire2"))
-        {
-            // set the target to the mouse click location
-            target = point;
-        }
     }
 
     private void FixedUpdate()
@@ -72,11 +96,5 @@ public class PlayerController : Character
     {
         this.min = min;
         this.max = max;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        target = gameObject.transform.position;
-        Debug.Log("Collide");
     }
 }

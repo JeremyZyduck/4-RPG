@@ -9,17 +9,17 @@ public class RoofVisibility : MonoBehaviour
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            GetComponent<SpriteRenderer>().color = new Color (1,1,1, 0.5f);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
         }

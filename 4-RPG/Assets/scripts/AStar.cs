@@ -38,7 +38,7 @@ public class AStar : MonoBehaviour
 
     private List<Vector3Int> blockedTiles = new List<Vector3Int>();
 
-    private Stack<Vector3Int> path;
+    private Stack<Vector3> path;
 
     [SerializeField]
     private TileBase blocked;
@@ -49,66 +49,105 @@ public class AStar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //   RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
 
-            if (hit.collider != null)
-            {
-                Vector3 mouseWorldPos = camera.ScreenToWorldPoint(Input.mousePosition);
-                Vector3Int clickPos = tilemap.WorldToCell(mouseWorldPos);
+        //    if (hit.collider != null)
+        //    {
+        //        Vector3 mouseWorldPos = camera.ScreenToWorldPoint(Input.mousePosition);
+        //        Vector3Int clickPos = tilemap.WorldToCell(mouseWorldPos);
 
-                ChangeTile(clickPos);
-            }
-        }
+        //        ChangeTile(clickPos);
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Algorithm();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Algorithm();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Reset();
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    Reset();
+        //}
 
-        ChangeTileType();
+        //ChangeTileType();
         
     }
 
-    public Stack<Vector3Int> Algorithm()
+    private void ClearAStar()
     {
+        if (current != null)
+        {
+            allNodes.Clear();
+            closedList.Clear();
+            openList.Clear();
+            path = null;
+            current = null;
+        }
+
+    }
+
+    public Stack<Vector3> Algorithm(Vector3 postion, Vector3 goal)
+    {
+        ClearAStar();
+        startPos = tilemap.WorldToCell(postion);
+        goalPos = tilemap.WorldToCell(goal);
         current = GetNode(startPos);
         openList = new HashSet<Node>();
         closedList = new HashSet<Node>();
-        changedTiles = new HashSet<Vector3Int>();
         openList.Add(current);
         path = null;
 
         while (openList.Count > 0 && path == null)
         {
             List<Node> neighbors = FindNeighbors(current.Position);
+
             ExamineNeighbors(neighbors, current);
+
             UpdateCurrentTile(ref current);
+
             path = GeneratePath(current);
         }
 
-        AStarDebug.thisInstance.CreateTiles(openList, closedList, allNodes, startPos, goalPos, path);
-        if (path != null)
-        {
-            foreach (Vector3Int pos in path)
-            {
-                if(pos != goalPos)
-                {
-                    DebugTilemap.SetTile(pos, tiles[2]);
-                }
-            }
-            //return path;
-        }
-        
-        
-        return null;
+        return path;
+
     }
+
+    //public Stack<Vector3Int> Algorithm()
+    //{
+    //current = GetNode(startPos);
+    //openList = new HashSet<Node>();
+    //closedList = new HashSet<Node>();
+    //changedTiles = new HashSet<Vector3Int>();
+    //openList.Add(current);
+    //path = null;
+    //
+    //while (openList.Count > 0 && path == null)
+    //{
+    //    List<Node> neighbors = FindNeighbors(current.Position);
+    //    ExamineNeighbors(neighbors, current);
+    //    UpdateCurrentTile(ref current);
+    //    path = GeneratePath(current);
+    //}
+
+    //AStarDebug.thisInstance.CreateTiles(openList, closedList, allNodes, startPos, goalPos, path);
+    //if (path != null)
+    //{
+    //foreach (Vector3Int pos in path)
+    //{
+    //if(pos != goalPos)
+    //    {
+    //      DebugTilemap.SetTile(pos, tiles[2]);
+    //      }
+    //    }
+    //return path;
+    //}
+
+
+    //    return null;
+    //}
 
     private List<Node> FindNeighbors(Vector3Int parentPosition)
     {
@@ -283,11 +322,11 @@ public class AStar : MonoBehaviour
         return true;
     }
 
-    private Stack<Vector3Int> GeneratePath(Node current)
+    private Stack<Vector3> GeneratePath(Node current)
     {
         if (current.Position == goalPos)
         {
-            Stack<Vector3Int> finalPath = new Stack<Vector3Int>();
+            Stack<Vector3> finalPath = new Stack<Vector3>();
 
             while(current.Position != startPos)
             {
