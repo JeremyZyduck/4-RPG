@@ -42,7 +42,7 @@ public class AStarDebug : MonoBehaviour
     [SerializeField]
     private Tile eTile;
 
-    public void CreateTiles(HashSet<Node> openList, HashSet<Node> closedList,Dictionary<Vector3Int,Node> allNodes, Vector3Int start, Vector3Int goal, Stack<Vector3Int> path = null)
+    public void CreateTiles(HashSet<Node> openList, HashSet<Node> closedList, Dictionary<Vector3Int, Node> allNodes, Vector3Int start, Vector3Int goal, Stack<Vector3Int> path = null)
     {
 
         foreach (GameObject go in debugObjects)

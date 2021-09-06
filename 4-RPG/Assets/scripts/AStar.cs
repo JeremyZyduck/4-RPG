@@ -9,24 +9,13 @@ public enum TileType {START, GOAL, WALKABLE, NONWALKABLE, PATH }
 
 public class AStar : MonoBehaviour
 {
-
-    private TileType tileType;
-
     [SerializeField]
     private Tilemap tilemap;
-    [SerializeField]
-    private Tilemap DebugTilemap;
-
-    [SerializeField]
-    private Tile[] tiles;
 
     [SerializeField]
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     private Camera camera;
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
-
-    [SerializeField]
-    private LayerMask layerMask;
 
     [SerializeField]
     private Vector3Int startPos, goalPos;
@@ -39,42 +28,6 @@ public class AStar : MonoBehaviour
     private List<Vector3Int> blockedTiles = new List<Vector3Int>();
 
     private Stack<Vector3> path;
-
-    [SerializeField]
-    private TileBase blocked;
-
-    private HashSet<Vector3Int> changedTiles;
-
-    private bool start, goal;
-
-    void Update()
-    {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //   RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layerMask);
-
-        //    if (hit.collider != null)
-        //    {
-        //        Vector3 mouseWorldPos = camera.ScreenToWorldPoint(Input.mousePosition);
-        //        Vector3Int clickPos = tilemap.WorldToCell(mouseWorldPos);
-
-        //        ChangeTile(clickPos);
-        //    }
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    Algorithm();
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.J))
-        //{
-        //    Reset();
-        //}
-
-        //ChangeTileType();
-        
-    }
 
     private void ClearAStar()
     {
@@ -114,40 +67,6 @@ public class AStar : MonoBehaviour
         return path;
 
     }
-
-    //public Stack<Vector3Int> Algorithm()
-    //{
-    //current = GetNode(startPos);
-    //openList = new HashSet<Node>();
-    //closedList = new HashSet<Node>();
-    //changedTiles = new HashSet<Vector3Int>();
-    //openList.Add(current);
-    //path = null;
-    //
-    //while (openList.Count > 0 && path == null)
-    //{
-    //    List<Node> neighbors = FindNeighbors(current.Position);
-    //    ExamineNeighbors(neighbors, current);
-    //    UpdateCurrentTile(ref current);
-    //    path = GeneratePath(current);
-    //}
-
-    //AStarDebug.thisInstance.CreateTiles(openList, closedList, allNodes, startPos, goalPos, path);
-    //if (path != null)
-    //{
-    //foreach (Vector3Int pos in path)
-    //{
-    //if(pos != goalPos)
-    //    {
-    //      DebugTilemap.SetTile(pos, tiles[2]);
-    //      }
-    //    }
-    //return path;
-    //}
-
-
-    //    return null;
-    //}
 
     private List<Node> FindNeighbors(Vector3Int parentPosition)
     {
@@ -224,7 +143,6 @@ public class AStar : MonoBehaviour
             return 14;
         }
     }
-
     private void UpdateCurrentTile(ref Node current)
     {
         openList.Remove(current);
@@ -249,64 +167,6 @@ public class AStar : MonoBehaviour
             allNodes.Add(position, node);
             return node;
         }
-    }
-
-    public void ChangeTileType()
-    {
-        if (Input.GetKey(KeyCode.Alpha1))
-        {
-            tileType = TileType.START;
-        }
-        if (Input.GetKey(KeyCode.Alpha2))
-        {
-            tileType = TileType.GOAL;
-        }
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            tileType = TileType.WALKABLE;
-        }
-        if (Input.GetKey(KeyCode.Alpha4))
-        {
-            tileType = TileType.NONWALKABLE;
-        }
-        if (Input.GetKey(KeyCode.Alpha5))
-        {
-            tileType = TileType.PATH;
-        }
-    }
-
-    private void ChangeTile(Vector3Int clickPos)
-    {
-        if (tileType == TileType.NONWALKABLE)
-        {
-            DebugTilemap.SetTile(clickPos, blocked);
-            blockedTiles.Add(clickPos);
-        }
-        else
-        {
-            if (tileType == TileType.START)
-            {
-                if (start)
-                {
-                    DebugTilemap.SetTile(startPos, tiles[0]);
-                }
-                start = true;
-                startPos = clickPos;
-            }
-            else if (tileType == TileType.GOAL)
-            {
-                if (goal)
-                {
-                    DebugTilemap.SetTile(goalPos, tiles[1]);
-                }
-                goal = true;
-                goalPos = clickPos;
-            }
-            DebugTilemap.SetTile(clickPos, tiles[(int)tileType]);
-        }
-        //changedTiles.Add(tilemap.WorldToCell(camera.ScreenToWorldPoint(Input.mousePosition)));
-        
-
     }
 
     private bool ConnectedDiag(Node currentNode, Node neighbor)
@@ -340,19 +200,9 @@ public class AStar : MonoBehaviour
 
     public void Reset()
     {
-        AStarDebug.thisInstance.Reset(allNodes);
-
-        foreach (Vector3Int item in changedTiles)
-        {
-            //remove
-            DebugTilemap.SetTile(item, tiles[4]);
-        }
-
+        //AStarDebug.thisInstance.Reset(allNodes);
         allNodes.Clear();
         current = null;
         path = null;
-        start = false;
-        goal = false;
-
     }
 }
