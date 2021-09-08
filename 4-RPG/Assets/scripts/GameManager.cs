@@ -28,15 +28,15 @@ public class GameManager : MonoBehaviour
 
     public void FlipInputState()
     {
-        if (Player.GetComponent<PlayerController>().enabled == false && paused == false)
+        if (Player.GetComponent<PlayerController>().enabled == true)
         {
-            Player.GetComponent<PlayerController>().enabled = true;
+            Player.GetComponent<PlayerController>().enabled = false;
             paused = true;
         }
         else
         {
-            Player.GetComponent<PlayerController>().enabled = false;
-            paused = true;
+            Player.GetComponent<PlayerController>().enabled = true;
+            paused = false;
         }
     }
 

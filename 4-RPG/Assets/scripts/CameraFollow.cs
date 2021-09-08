@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//Follows player and uses clamps to prevent the camera from going off the edge of the tilemap
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
@@ -21,7 +22,7 @@ public class CameraFollow : MonoBehaviour
 
     [SerializeField]
     private PlayerController character;
-    // Start is called before the first frame update
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -34,11 +35,6 @@ public class CameraFollow : MonoBehaviour
         character.SetLimits(minTile, maxTile);
     }
 
-    private void Update()
-    {
-    }
-
-    // Update is called once per frame
     public void LateUpdate()
     {
         Vector3 currentPosition = transform.position;

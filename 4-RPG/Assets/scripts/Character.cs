@@ -24,22 +24,14 @@ public abstract class Character : MonoBehaviour
 
     void Start()
     {
-
     }
 
     protected virtual void Update()
-    {
-        
+    { 
     }
 
     private void FixedUpdate()
     {
-        Move();
-    }
-
-    private void Move()
-    {
-        
     }
 
 }

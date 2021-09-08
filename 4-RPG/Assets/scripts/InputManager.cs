@@ -44,12 +44,12 @@ public class InputManager : MonoBehaviour
         {
             if (mapIsOn)
             {
-                mainCam.enabled = true;
+                //mainCam.enabled = true;
                 mapCam.enabled = false;
             }
             else
             {
-                mainCam.enabled = false;
+                //mainCam.enabled = false;
                 mapCam.enabled = true;
             }
             Game.GetComponent<GameManager>().FlipInputState();
