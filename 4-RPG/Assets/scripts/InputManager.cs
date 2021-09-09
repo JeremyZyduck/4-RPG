@@ -1,44 +1,22 @@
+#region USING
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+#endregion
 public class InputManager : MonoBehaviour
 {
-    [SerializeField]
-    private Camera mainCam;
-    [SerializeField]
-    private Camera mapCam;
-    [SerializeField]
-    private GameObject Game;
-
-    [SerializeField]
-    private GameObject TextPrefab;
-    [SerializeField]
-    private GameObject EnterName;
-    [SerializeField]
-    private Canvas Menu;
-
-    bool mapIsOn
+    #region STAT CHANGES
+    public void changeName()
     {
-        get
-        {
-            return mapCam.enabled;
-        }
-    }
-
-    private void Start()
-    {
-        Game = GameObject.Find("Game");
-        Menu.enabled = false;
-        string pName = Game.GetComponent<GameManager>().getPlayerName();
+        string pName = EnterName.GetComponent<TMP_InputField>().text;
+        Game.GetComponent<GameManager>().setPlayerName(pName);
         TextPrefab.GetComponent<TextMeshProUGUI>().text = $"Name:{pName}";
-
-        mainCam.enabled = true;
-        mapCam.enabled = false;
-        Game = GameObject.Find("Game");
     }
-    void Update()
+    #endregion
+
+    #region INPUTS
+    private void GetInput()
     {
         if (Input.GetKeyDown(KeyCode.M) && !Menu.enabled)
         {
@@ -68,11 +46,44 @@ public class InputManager : MonoBehaviour
             Game.GetComponent<GameManager>().FlipInputState();
         }
     }
+    #endregion
+    [SerializeField]
+    private Camera mainCam;
+    [SerializeField]
+    private Camera mapCam;
+    [SerializeField]
+    private GameObject Game;
 
-    public void changeName()
+    [SerializeField]
+    private GameObject TextPrefab;
+    [SerializeField]
+    private GameObject EnterName;
+    [SerializeField]
+    private Canvas Menu;
+
+    bool mapIsOn
     {
-        string pName = EnterName.GetComponent<TMP_InputField>().text;
-        Game.GetComponent<GameManager>().setPlayerName(pName);
-        TextPrefab.GetComponent<TextMeshProUGUI>().text = $"Name:{pName}";
+        get
+        {
+            return mapCam.enabled;
+        }
     }
+
+    #region DEFAULT
+    private void Start()
+    {
+        Game = GameObject.Find("Game");
+        Menu.enabled = false;
+        string pName = Game.GetComponent<GameManager>().getPlayerName();
+        TextPrefab.GetComponent<TextMeshProUGUI>().text = $"Name:{pName}";
+
+        mainCam.enabled = true;
+        mapCam.enabled = false;
+    }
+    void Update()
+    {
+        GetInput();
+    }
+    #endregion
+
 }

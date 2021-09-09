@@ -1,8 +1,9 @@
+#region USING
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+#endregion
 //Follows player and uses clamps to prevent the camera from going off the edge of the tilemap
 public class CameraFollow : MonoBehaviour
 {

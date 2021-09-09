@@ -1,27 +1,27 @@
+#region USING
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Sirenix.OdinInspector;
+#endregion
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField]
+    #region TODO
+    //Refactor this and the playerController.cs to allow for movement on all users of this class
+    //Track health
+    //Track if in combat, friendly, a follower, or neutral
+    #endregion
+    #region MOVEMENT
+    [BoxGroup("Movement"), SerializeField, LabelText("Speed")]
     protected float fSpeed;
-
-    [SerializeField]
-    protected Vector2 v2Direction;
-
+    #endregion
+    #region PHYSICS OBJECT
     //Grabs rigidbody from child
     //All children require the line 'r2dCharPhysics = GetComponent<Rigidbody2D>();' in the start function
+    [BoxGroup("Player"), SerializeField, PropertyOrder(-3), LabelText("Rigidbody")]
     protected Rigidbody2D r2dCharPhysics;
-
-    public bool bIsMoving
-    {
-        get
-        {
-            return v2Direction.x != 0 || v2Direction.y != 0;
-        }
-    }
-
+    #endregion
+    #region DEFAULT
     void Start()
     {
     }
@@ -33,5 +33,5 @@ public abstract class Character : MonoBehaviour
     private void FixedUpdate()
     {
     }
-
+    #endregion
 }

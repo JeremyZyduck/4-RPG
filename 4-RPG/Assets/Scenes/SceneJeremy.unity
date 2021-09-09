@@ -7913,7 +7913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fSpeed: 5
-  v2Direction: {x: 0, y: 0}
+  r2dCharPhysics: {fileID: 1309435823}
+  currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1309435824}
 --- !u!70 &1309435820
 CapsuleCollider2D:

@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: InspectorConfig
   m_EditorClassIdentifier: 
   enableOdinInInspector: 1
-  defaultEditorBehaviour: 11
+  defaultEditorBehaviour: 15
   processMouseMoveInInspector: 1
   drawingConfig:
-    configs: []
+    configs:
+    - DrawnTypeName: NodeCanvas.DialogueTrees.DialogueActor, ParadoxNotion
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: NodeCanvas.DialogueTrees.UI.Examples.DialogueUGUI, ParadoxNotion
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: NodeCanvas.Editor.StyleSheet, ParadoxNotion
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: NodeCanvas.Tasks.Actions.CameraFader, ParadoxNotion
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
