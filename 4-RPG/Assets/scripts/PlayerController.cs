@@ -5,6 +5,12 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 #endregion
+/*<SUMMARY>
+ *All required functions unique to the player character.
+<USE>
+ *Player Object.
+</USE>
+</SUMMARY>*/
 public class PlayerController : Character
 {
     #region TODO

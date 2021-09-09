@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 #endregion
+/*<SUMMARY>
+ *All shared functions of characters.
+<USE>
+ *All characters(NPCs and Player Character).
+</USE>
+</SUMMARY>*/
 public abstract class Character : MonoBehaviour
 {
     #region TODO
