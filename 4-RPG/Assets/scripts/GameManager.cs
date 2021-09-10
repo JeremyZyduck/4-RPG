@@ -1,31 +1,30 @@
+#region USING
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+#endregion
+/*<SUMMARY>
+ *Collection of functions and variables that affect the game as a whole.
+<USE>
+ *Game Object
+</USE>
+</SUMMARY>*/
 public class GameManager : MonoBehaviour
 {
+    #region TODO
+    #endregion
+
+    #region PLAYERINFO
     [SerializeField]
     private string playerName;
     [SerializeField]
     private GameObject Player;
-    [SerializeField]
-    private LayerMask layer;
-    public bool paused;
-
     public void setPlayerName(string name) { playerName = name; }
     public string getPlayerName() { return playerName; }
+    #endregion
 
-    private void Start()
-    {
-        Player = GameObject.Find("Player");
-        paused = false;
-    }
-
-    private void Update()
-    {
-        GetPlayerTargetPos();
-    }
-
+    #region GAMESTATE
+    public bool paused;
     public void FlipInputState()
     {
         if (Player.GetComponent<PlayerController>().enabled == true)
@@ -39,27 +38,12 @@ public class GameManager : MonoBehaviour
             paused = false;
         }
     }
+    #endregion
 
-
-    public void GetPlayerTargetPos()
+    #region DEFAULT
+    private void Start()
     {
-        if (!paused)
-        {
-            //TODO: Check for enemies/gameobjects
-            if (Input.GetMouseButton(1))
-            {
-                Debug.Log("m1 clicked");
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, layer);
-                if (hit.collider != null)
-                {
-                    Debug.Log("collider not null");
-                    Player.GetComponent<PlayerController>().GetPath(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                }
-                else
-                {
-                    Debug.Log("collider null");
-                }
-            }
-        }
+        paused = false;
     }
+    #endregion
 }

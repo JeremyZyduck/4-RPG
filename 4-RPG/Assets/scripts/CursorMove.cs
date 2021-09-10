@@ -4,18 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 #endregion
-
+/*<SUMMARY>
+ *Selects and highlights the current tile being moused over
+<USE>
+ *Child of Player object
+</USE>
+</SUMMARY>*/
 public class CursorMove : MonoBehaviour
 {
+    #region TODO
+    #endregion
+
+    #region TILE
     [SerializeField]
     private Grid grid;
-    [SerializeField] 
+    [SerializeField]
     private Tilemap debugmap;
     [SerializeField]
     private Tile hoverTile;
+    #endregion
+    #region MOUSE
     private Vector3Int previousMousePos = new Vector3Int();
-
-    // Update is called once per frame
+    public Vector3Int GetMousePosition()
+    {
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return grid.WorldToCell(mouseWorldPos);
+    }
+    #endregion
+    #region DEFAULT
     void Update()
     {
         Vector3Int mousePos = GetMousePosition();
@@ -26,11 +42,6 @@ public class CursorMove : MonoBehaviour
             previousMousePos = mousePos;
         }
     }
-
-    public Vector3Int GetMousePosition()
-    {
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        return grid.WorldToCell(mouseWorldPos);
-    }
+    #endregion
 }
 

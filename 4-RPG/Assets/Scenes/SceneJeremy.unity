@@ -3156,9 +3156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Charlie
   Player: {fileID: 1309435818}
-  layer:
-    serializedVersion: 2
-    m_Bits: 503
   paused: 0
 --- !u!4 &286359397
 Transform:
@@ -3186,12 +3183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210569686c035d74cbcbf7a5b6dea7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 503
   mainCam: {fileID: 838479103}
   mapCam: {fileID: 1863536866}
-  Game: {fileID: 286359395}
   TextPrefab: {fileID: 521951780}
   EnterName: {fileID: 487011918}
   Menu: {fileID: 1597849687}
+  Game: {fileID: 286359395}
 --- !u!1 &418727809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,8 +3550,8 @@ MonoBehaviour:
   yMin: 0
   yMax: 0
   tilemap: {fileID: 962227912}
-  targetDistance: 0.5
   character: {fileID: 1309435819}
+  targetDistance: 0.5
 --- !u!54 &838479106
 Rigidbody:
   m_ObjectHideFlags: 0
