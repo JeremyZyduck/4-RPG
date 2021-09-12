@@ -25,7 +25,13 @@ public class InputManager : MonoBehaviour
     #region INPUTS
     private void GetInput()
     {
-        #region GUI INPUT
+        InputGUI();
+        GetPlayerTargetPos();
+    }
+    #region GUI INPUT
+    private void InputGUI()
+    {
+        
         if (Input.GetKeyDown(KeyCode.M) && !Menu.enabled)
         {
             if (mapIsOn)
@@ -52,10 +58,10 @@ public class InputManager : MonoBehaviour
             }
             Game.GetComponent<GameManager>().FlipInputState();
         }
-        #endregion
-        GetPlayerTargetPos();
+        
     }
-
+    #endregion
+    #region PLAYERMOVE
     [SerializeField]
     private LayerMask layer;
     public void GetPlayerTargetPos()
@@ -79,6 +85,7 @@ public class InputManager : MonoBehaviour
             }
         }
     }
+    #endregion
     #endregion
     #region MAP/CAMERA
     [SerializeField]

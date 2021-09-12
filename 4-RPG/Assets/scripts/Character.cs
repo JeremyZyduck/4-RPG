@@ -31,9 +31,13 @@ public abstract class Character : MonoBehaviour
     [BoxGroup("Pathfinding"), SerializeField, Required, LabelText("Astar Script"),]
     protected AStar astar;
 
-    
+    public void GetPath(Vector3 goal)
+    {
+        path = astar.Algorithm(transform.position, goal);
+        currentPos = path.Pop();
+    }
 
-    private void ClickToMove()
+    private void Move()
     {
         if (path != null)
         {
@@ -52,6 +56,8 @@ public abstract class Character : MonoBehaviour
             }
         }
     }
+
+    
     #endregion
     #region PHYSICS OBJECT
     //Grabs rigidbody from child
@@ -67,7 +73,7 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Update()
     {
-        ClickToMove();
+        Move();
         if (health <= 0)
         {
             //DEATH
