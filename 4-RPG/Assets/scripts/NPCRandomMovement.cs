@@ -36,10 +36,10 @@ public class NPCRandomMovement : Character
 
     protected override void Update()
     {
-        Debug.Log("Is Path Empty: " + isPathEmpty + "\n Random: " + direction);
+        //Debug.Log("Is Path Empty: " + isPathEmpty + "\n Random: " + direction);
         if (isPathEmpty)
         {
-            Debug.Log(position == null);
+            //Debug.Log(position == null);
 
             direction = Random.Range(0, 7);
             switch (direction)
