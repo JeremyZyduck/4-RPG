@@ -16,8 +16,8 @@ public abstract class Character : MonoBehaviour
     //Track if in combat, friendly, a follower, or neutral
     #endregion
     #region STATS
-    [BoxGroup("Movement"), SerializeField]
-    private int health;
+    [SerializeField]
+    private int health = 100;
     #endregion
     #region MOVEMENT
     [BoxGroup("Movement"), SerializeField, LabelText("Speed")]
@@ -76,7 +76,7 @@ public abstract class Character : MonoBehaviour
         Move();
         if (health <= 0)
         {
-            //DEATH
+            gameObject.SetActive(false);
         }
     }
 
