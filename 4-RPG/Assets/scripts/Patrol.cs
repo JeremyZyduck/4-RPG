@@ -10,32 +10,18 @@ using UnityEngine;
 public class Patrol : Character
 {
     #region TODO
-    //Get list of locations set in inspector
-    //Get Rigidbody on start
-    //Get path
     #endregion
 
     #region LOCATIONS
     [SerializeField]
-    private Vector3[] PatrolRoute;
-    public int placeInPatrol = 0;
+    private GameObject[] route;
+
+    [SerializeField]
+    private int placeInRoute;
 
     #endregion
 
     #region PATROL
-    protected void patrol(Vector3[] route)
-    {
-        for (int i = 0; i < route.Length; i++)
-        {
-            if (route[i] != null)
-            {
-                GetPath(route[i]);
-                //StartCoroutine(WaitForPathToBeNull());
-            }
-        }
-        
-    }
-
     protected bool isPathEmpty
     {
         get
@@ -49,26 +35,22 @@ public class Patrol : Character
                 return false;
             }
         }
-    }
-    /*
-    IEnumerator WaitForPathToBeNull()
-    {
-        while (!isPathEmpty)
-        {
-            if (isPathEmpty)
-            {
-                yield return null;
-            }
-        }
-    }
-    */
+    } 
     #endregion
 
-
     #region DEFAULT
-    private void Start()
+    protected override void Update()
     {
-        patrol(PatrolRoute);
+        if (route[placeInRoute] != null && isPathEmpty)
+        {
+            GetPath(route[placeInRoute].transform.position);
+            placeInRoute++;
+        }
+        if (placeInRoute == route.Length)
+        {
+            placeInRoute = 0;
+        }
+        base.Update();
     }
     #endregion
 }
