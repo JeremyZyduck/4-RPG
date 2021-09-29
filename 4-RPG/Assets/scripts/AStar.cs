@@ -1,12 +1,19 @@
+#region USING
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+#endregion
 public enum TileType {START, GOAL, WALKABLE, NONWALKABLE, PATH }
 
+/*<SUMMARY>
+ *Implementation of the A* algorithm
+<USE>
+ *Player Movement
+</USE>
+</SUMMARY>*/
 public class AStar : MonoBehaviour
 {
     [SerializeField]

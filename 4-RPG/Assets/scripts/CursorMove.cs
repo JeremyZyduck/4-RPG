@@ -1,44 +1,39 @@
+#region USING
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+#endregion
+/*<SUMMARY>
+ *Selects and highlights the current tile being moused over
+<USE>
+ *Child of Player object
+</USE>
+</SUMMARY>*/
 public class CursorMove : MonoBehaviour
 {
+    #region TODO
+    #endregion
+
+    #region TILE
     [SerializeField]
     private Grid grid;
-    [SerializeField] 
+    [SerializeField]
     private Tilemap debugmap;
     [SerializeField]
     private Tile hoverTile;
+    #endregion
+    #region MOUSE
     private Vector3Int previousMousePos = new Vector3Int();
-
-    // Start is called before the first frame update
-    void Start()
+    public Vector3Int GetMousePosition()
     {
-        //Cursor.visible = false;
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return grid.WorldToCell(mouseWorldPos);
     }
-
-    // Update is called once per frame
+    #endregion
+    #region DEFAULT
     void Update()
     {
-        try
-        {
-            Vector2 CurmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(CurmousePos.x, CurmousePos.y);
-            if (Input.GetButtonDown("Fire1"))
-            {
-                //TODO: CHANGE COLOR
-            }
-            if (Input.GetButtonDown("Fire2"))
-            {
-                //TODO: CHANGE COLOR
-            }
-        }
-        catch
-        { 
-        //TODO: DISABLE CURSOR
-        }
         Vector3Int mousePos = GetMousePosition();
         if (!mousePos.Equals(previousMousePos))
         {
@@ -47,11 +42,6 @@ public class CursorMove : MonoBehaviour
             previousMousePos = mousePos;
         }
     }
-
-    public Vector3Int GetMousePosition()
-    {
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        return grid.WorldToCell(mouseWorldPos);
-    }
+    #endregion
 }
 
