@@ -28,8 +28,11 @@ public abstract class Character : MonoBehaviour
     protected Stack<Vector3> path;
     [BoxGroup("Pathfinding"), SerializeField, ReadOnly, LabelText("Current Position")]
     protected Vector3 currentPos;
-    [BoxGroup("Pathfinding"), SerializeField, Required, LabelText("Astar Script"),]
+    [BoxGroup("Pathfinding"), SerializeField, Required, LabelText("Astar Script")]
     protected AStar astar;
+    
+
+    
 
     public void GetPath(Vector3 goal)
     {

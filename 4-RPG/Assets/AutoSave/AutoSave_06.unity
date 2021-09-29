@@ -3567,7 +3567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fac5592ad354647b6d8fb04e57bffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 449782933}
@@ -4271,7 +4271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ff171a21f939845b8313f7c0c6414e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 905885206}
@@ -8684,7 +8684,6 @@ GameObject:
   - component: {fileID: 1309435819}
   - component: {fileID: 1309435823}
   - component: {fileID: 1309435824}
-  - component: {fileID: 1309435825}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8704,7 +8703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce01322c8c2c5ee428d4a9f24040910c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1309435824}
@@ -8828,25 +8827,6 @@ MonoBehaviour:
   camera: {fileID: 838479103}
   startPos: {x: 0, y: 0, z: 0}
   goalPos: {x: 0, y: 0, z: 0}
---- !u!114 &1309435825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309435818}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f5eafc4ff39d043af52052a30e6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  fSpeed: 5
-  currentPos: {x: 0, y: 0, z: 0}
-  astar: {fileID: 1309435824}
-  r2dCharPhysics: {fileID: 1309435823}
-  route: []
-  placeInRoute: 0
 --- !u!1 &1311906885
 GameObject:
   m_ObjectHideFlags: 0
@@ -10484,7 +10464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f5eafc4ff39d043af52052a30e6f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
