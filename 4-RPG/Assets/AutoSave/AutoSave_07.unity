@@ -3571,10 +3571,6 @@ MonoBehaviour:
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 449782933}
-  RandomMov: {fileID: 0}
-  PatrolMov: {fileID: 0}
-  FollowMov: {fileID: 0}
-  MovementType: 0
   r2dCharPhysics: {fileID: 449782934}
   FollowObject: {fileID: 1309435818}
 --- !u!114 &449782933
@@ -4279,10 +4275,6 @@ MonoBehaviour:
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 905885206}
-  RandomMov: {fileID: 0}
-  PatrolMov: {fileID: 0}
-  FollowMov: {fileID: 0}
-  MovementType: 0
   r2dCharPhysics: {fileID: 905885207}
   secondsToWait: 2
 --- !u!1 &962227909
@@ -8715,10 +8707,6 @@ MonoBehaviour:
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1309435824}
-  RandomMov: {fileID: 0}
-  PatrolMov: {fileID: 0}
-  FollowMov: {fileID: 0}
-  MovementType: 0
   r2dCharPhysics: {fileID: 1309435823}
 --- !u!70 &1309435820
 CapsuleCollider2D:
@@ -9473,7 +9461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1520471613
 Transform:
   m_ObjectHideFlags: 0
@@ -10412,7 +10400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1682606209
 Transform:
   m_ObjectHideFlags: 0
@@ -10442,6 +10430,9 @@ GameObject:
   - component: {fileID: 1841949483}
   - component: {fileID: 1841949482}
   - component: {fileID: 1841949481}
+  - component: {fileID: 1841949487}
+  - component: {fileID: 1841949484}
+  - component: {fileID: 1841949488}
   m_Layer: 0
   m_Name: NPCPatrol
   m_TagString: Player
@@ -10471,19 +10462,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841949479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99f5eafc4ff39d043af52052a30e6f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  fSpeed: 5
+  fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
-  RandomMov: {fileID: 0}
-  PatrolMov: {fileID: 0}
-  FollowMov: {fileID: 0}
-  MovementType: 0
   r2dCharPhysics: {fileID: 1841949483}
   route:
   - {fileID: 146163681}
@@ -10528,6 +10515,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1841949484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841949479}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fac5592ad354647b6d8fb04e57bffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  fSpeed: 3
+  currentPos: {x: 0, y: 0, z: 0}
+  astar: {fileID: 1841949482}
+  r2dCharPhysics: {fileID: 1841949483}
+  FollowObject: {fileID: 1309435818}
 --- !u!70 &1841949485
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10595,6 +10600,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1841949487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841949479}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ff171a21f939845b8313f7c0c6414e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  fSpeed: 3
+  currentPos: {x: 0, y: 0, z: 0}
+  astar: {fileID: 1841949482}
+  r2dCharPhysics: {fileID: 1841949483}
+  secondsToWait: 0
+--- !u!114 &1841949488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841949479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea75e3c2fb729214ab2fe2581658abb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  fSpeed: 3
+  currentPos: {x: 0, y: 0, z: 0}
+  astar: {fileID: 1841949482}
+  r2dCharPhysics: {fileID: 0}
+  RandomMov: {fileID: 1841949487}
+  PatrolMov: {fileID: 1841949481}
+  FollowMov: {fileID: 1841949484}
+  MovementType: 0
 --- !u!1 &1863536863
 GameObject:
   m_ObjectHideFlags: 0
