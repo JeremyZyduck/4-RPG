@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.Tilemaps;
 #endregion
 /*<SUMMARY>
  *All an abstract class holding all shared functions and variables of characters.
@@ -13,11 +14,6 @@ using Sirenix.OdinInspector;
 public abstract class Character : MonoBehaviour
 {
     #region TODO
-    //Track if in combat, friendly, a follower, or neutral
-    #endregion
-    #region STATS
-    [SerializeField]
-    private int health = 100;
     #endregion
     #region MOVEMENT
     [BoxGroup("Movement"), SerializeField, LabelText("Speed")]
@@ -30,9 +26,10 @@ public abstract class Character : MonoBehaviour
     protected Vector3 currentPos;
     [BoxGroup("Pathfinding"), SerializeField, Required, LabelText("Astar Script")]
     protected AStar astar;
-    
 
-    
+    [SerializeField]
+    private Tilemap tilemap;
+
 
     public void GetPath(Vector3 goal)
     {
@@ -45,7 +42,7 @@ public abstract class Character : MonoBehaviour
         if (path != null)
         {
             transform.parent.position = Vector2.MoveTowards(transform.parent.position, currentPos, fSpeed * Time.deltaTime);
-            float distance = Vector2.Distance(currentPos, transform.parent.position);
+            float distance = Vector2.Distance(currentPos, transform.parent.position); //currentPos and transform.parent.position need to snap to center of their current tile
             if (distance <= 0f)
             {
                 if (path.Count > 0)
@@ -77,10 +74,6 @@ public abstract class Character : MonoBehaviour
     protected virtual void Update()
     {
         Move();
-        if (health <= 0)
-        {
-            gameObject.SetActive(false);
-        }
     }
 
     private void FixedUpdate()

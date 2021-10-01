@@ -3567,10 +3567,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fac5592ad354647b6d8fb04e57bffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 449782933}
+  tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 449782934}
   FollowObject: {fileID: 1309435818}
 --- !u!114 &449782933
@@ -4271,10 +4271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ff171a21f939845b8313f7c0c6414e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 905885206}
+  tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 905885207}
   secondsToWait: 2
 --- !u!1 &962227909
@@ -8703,11 +8703,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce01322c8c2c5ee428d4a9f24040910c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1309435824}
+  tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1309435823}
+  Health: 100
+  deathAnim: {fileID: 0}
 --- !u!70 &1309435820
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10467,10 +10469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f5eafc4ff39d043af52052a30e6f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1841949483}
   route:
   - {fileID: 146163681}
@@ -10527,10 +10529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fac5592ad354647b6d8fb04e57bffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1841949483}
   FollowObject: {fileID: 1309435818}
 --- !u!70 &1841949485
@@ -10612,10 +10614,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ff171a21f939845b8313f7c0c6414e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1841949483}
   secondsToWait: 0
 --- !u!114 &1841949488
@@ -10630,15 +10632,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea75e3c2fb729214ab2fe2581658abb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  tilemap: {fileID: 962227912}
   r2dCharPhysics: {fileID: 0}
   RandomMov: {fileID: 1841949487}
   PatrolMov: {fileID: 1841949481}
   FollowMov: {fileID: 1841949484}
-  MovementType: 0
+  MovementType: 1
+  Health: 100
+  Behavior: 0
+  deathAnim: {fileID: 0}
 --- !u!1 &1863536863
 GameObject:
   m_ObjectHideFlags: 0
