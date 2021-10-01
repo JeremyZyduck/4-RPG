@@ -10638,7 +10638,7 @@ MonoBehaviour:
   RandomMov: {fileID: 1841949487}
   PatrolMov: {fileID: 1841949481}
   FollowMov: {fileID: 1841949484}
-  MovementType: 0
+  MovementType: 1
 --- !u!1 &1863536863
 GameObject:
   m_ObjectHideFlags: 0
