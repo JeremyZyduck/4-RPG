@@ -1,0 +1,840 @@
+fileFormatVersion: 2
+guid: 0a45d67c16a06334e8466382a7c8f4ef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4735136602394085600
+    second: SPT_Hero_Still
+  - first:
+      213: 8060652287909533163
+    second: SPT_Hero_Idle1
+  - first:
+      213: -5726040251133610916
+    second: SPT_Hero_Run1
+  - first:
+      213: 1636842780286841367
+    second: SPT_Hero_Idle2
+  - first:
+      213: 1283644789342200053
+    second: SPT_Hero_Idle3
+  - first:
+      213: 2304175823451547193
+    second: SPT_Hero_Idle4
+  - first:
+      213: 5427142612853079472
+    second: SPT_Hero_Run2
+  - first:
+      213: -3610383452307975006
+    second: SPT_Hero_Run3
+  - first:
+      213: 4816747867296091838
+    second: SPT_Hero_Run4
+  - first:
+      213: -1236326835658470316
+    second: SPT_Hero_Run5
+  - first:
+      213: 6638871755708243965
+    second: SPT_Hero_Run6
+  - first:
+      213: -1199189079260376251
+    second: SPT_Hero_Run7
+  - first:
+      213: -3468189894088920277
+    second: SPT_Hero_Run8
+  - first:
+      213: 3284820024606451898
+    second: SPT_Hero_Attack1.1
+  - first:
+      213: -3557794704482125319
+    second: SPT_Hero_Attack1.2
+  - first:
+      213: 7132643176987626482
+    second: SPT_Hero_Attack1.3
+  - first:
+      213: 470619371571310341
+    second: SPT_Hero_Attack1.4
+  - first:
+      213: 7750604507938348440
+    second: SPT_Hero_Attack2.1
+  - first:
+      213: 2814965592984358131
+    second: SPT_Hero_Attack2.2
+  - first:
+      213: -7945779081215515863
+    second: SPT_Hero_Attack2.3
+  - first:
+      213: -3754734233840735191
+    second: SPT_Hero_Attack2.4
+  - first:
+      213: -4645399028706598484
+    second: SPT_Hero_Attack3.1
+  - first:
+      213: 6501948805335392211
+    second: SPT_Hero_Attack3.2
+  - first:
+      213: -6471218456204842500
+    second: SPT_Hero_Attack3.3
+  - first:
+      213: -1889972616116624188
+    second: SPT_Hero_Attack3.4
+  - first:
+      213: 6242296079887716911
+    second: SPT_Hero_Die1
+  - first:
+      213: -838767715144654564
+    second: SPT_Hero_Die2
+  - first:
+      213: -4281049555448095314
+    second: SPT_Hero_Die3
+  - first:
+      213: 2665063023100710545
+    second: SPT_Hero_Die4
+  - first:
+      213: 7881079982030337804
+    second: SPT_Hero_Die5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SPT_Hero_Still
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027b953195a694eb0800000000000000
+      internalID: -4735136602394085600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Idle1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be599c67c803ddf60800000000000000
+      internalID: 8060652287909533163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54b79dbab40980b0800000000000000
+      internalID: -5726040251133610916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Idle2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712f82816db37b610800000000000000
+      internalID: 1636842780286841367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Idle3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0e586822c60d110800000000000000
+      internalID: 1283644789342200053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Idle4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9366fd014b31aff10800000000000000
+      internalID: 2304175823451547193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd3e70c375115b40800000000000000
+      internalID: 5427142612853079472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a41c36f06755edc0800000000000000
+      internalID: -3610383452307975006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebecdc24aa688d240800000000000000
+      internalID: 4816747867296091838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c4b461b4fa7dee0800000000000000
+      internalID: -1236326835658470316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff1d5400b2022c50800000000000000
+      internalID: 6638871755708243965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5435820d2ef9b5fe0800000000000000
+      internalID: -1199189079260376251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Run8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23fa35aaa38edfc0800000000000000
+      internalID: -3468189894088920277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack1.1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8e1cd9866069d20800000000000000
+      internalID: 3284820024606451898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack1.2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9b397f09c20aec0800000000000000
+      internalID: -3557794704482125319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack1.3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb06f9dd2d3cf260800000000000000
+      internalID: 7132643176987626482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack1.4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fece233d9f78600800000000000000
+      internalID: 470619371571310341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack2.1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89dd43a4cbdaf8b60800000000000000
+      internalID: 7750604507938348440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack2.2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc87c0ea44c01720800000000000000
+      internalID: 2814965592984358131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack2.3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9236b60360ceab190800000000000000
+      internalID: -7945779081215515863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack2.4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cace59b1184ebc0800000000000000
+      internalID: -3754734233840735191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack3.1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1affd123a388fb0800000000000000
+      internalID: -4645399028706598484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack3.2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df9ac95dff8b3a50800000000000000
+      internalID: 6501948805335392211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack3.3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf965fd991d9136a0800000000000000
+      internalID: -6471218456204842500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Attack3.4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4272d4be775c5e0800000000000000
+      internalID: -1889972616116624188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Die1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f225588263711a650800000000000000
+      internalID: 6242296079887716911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Die2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11acb105391c54f0800000000000000
+      internalID: -838767715144654564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Die3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead1cad7c18a694c0800000000000000
+      internalID: -4281049555448095314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Die4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e42fb03b43cf420800000000000000
+      internalID: 2665063023100710545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPT_Hero_Die5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.2916667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c073c57ec783f5d60800000000000000
+      internalID: 7881079982030337804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
