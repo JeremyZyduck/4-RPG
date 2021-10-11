@@ -77,6 +77,7 @@ public class InputManager : MonoBehaviour
                 {
                     Debug.Log("collider not null");
                     GameObject.Find("Player").GetComponent<PlayerController>().GetPath(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                    GameObject.Find("Player").GetComponent<PlayerController>().AnimationState = 1;
                 }
                 else
                 {

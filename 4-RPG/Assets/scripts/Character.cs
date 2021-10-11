@@ -52,6 +52,7 @@ public abstract class Character : MonoBehaviour
                 else
                 {
                     path = null;
+                    GameObject.Find("Player").GetComponent<PlayerController>().AnimationState = 0;
                 }
             }
         }

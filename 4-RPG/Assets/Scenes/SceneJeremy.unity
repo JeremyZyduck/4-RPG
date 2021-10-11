@@ -3371,7 +3371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &365155271
 Transform:
   m_ObjectHideFlags: 0
@@ -8684,6 +8684,7 @@ GameObject:
   - component: {fileID: 1309435819}
   - component: {fileID: 1309435823}
   - component: {fileID: 1309435824}
+  - component: {fileID: 1309435825}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8710,6 +8711,9 @@ MonoBehaviour:
   r2dCharPhysics: {fileID: 1309435823}
   Health: 100
   deathAnim: {fileID: 0}
+  AnimationState: 0
+  CurrentAnimation: 0
+  playerAnimator: {fileID: 0}
 --- !u!70 &1309435820
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8829,6 +8833,25 @@ MonoBehaviour:
   camera: {fileID: 838479103}
   startPos: {x: 0, y: 0, z: 0}
   goalPos: {x: 0, y: 0, z: 0}
+--- !u!95 &1309435825
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309435818}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7e90adf03fcd464f91f9a4b913d887e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1311906885
 GameObject:
   m_ObjectHideFlags: 0
@@ -10371,7 +10394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654608946
 Transform:
   m_ObjectHideFlags: 0
@@ -10441,7 +10464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1841949480
 Transform:
   m_ObjectHideFlags: 0

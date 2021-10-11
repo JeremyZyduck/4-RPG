@@ -21,27 +21,77 @@ public class PlayerController : Character
 
     [SerializeField]
     private Animation deathAnim;
-    private void CheckHealth()
+
+    [SerializeField]
+    public int AnimationState = 0;
+
+    [SerializeField]
+    public int CurrentAnimation = 0;
+
+    public Animator playerAnimator;
+
+    protected bool isPathEmpty
     {
-        if (Health <= 0)
+        get
         {
-            deathAnim.Play("Death");
-            if (!deathAnim.IsPlaying("Death"))
+            if (path == null)
             {
-                gameObject.SetActive(false);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
+    }
+
+    private void ChangeAnimation()
+    {
+        /*if (!isPathEmpty)
+        {
+            AnimationState = 1;
+        }
+        else if (Health <= 0)
+        {
+            AnimationState = 2;
+        }
+        else
+        {
+            AnimationState = 0;
+        }*/
     }
 
     #region DEFAULT
     void Start()
     {
         r2dCharPhysics = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+    }
+
+
+    public void ChangeAnim()
+    {
+        playerAnimator.SetBool("AnimationChange", true);
+        playerAnimator.SetInteger("AnimationState", AnimationState);
+        CurrentAnimation = AnimationState;
     }
 
     protected override void Update()
     {
-        CheckHealth();
+        if (Health <= 0)
+        {
+            AnimationState = 2;
+        }
+
+        if (AnimationState != CurrentAnimation)
+        {
+            ChangeAnim();
+        }
+        else
+        {
+            playerAnimator.SetBool("AnimationChange", false);
+        }
+       
         base.Update();
     }
     #endregion
