@@ -28,6 +28,9 @@ public abstract class Character : MonoBehaviour
     protected AStar astar;
 
     [SerializeField]
+    protected Vector3 dir;
+
+    [SerializeField]
     private Tilemap tilemap;
 
 
@@ -35,6 +38,7 @@ public abstract class Character : MonoBehaviour
     {
         path = astar.Algorithm(transform.position, goal);
         currentPos = path.Pop();
+        dir = (transform.parent.position - goal).normalized;
     }
 
     private void Move()
@@ -43,6 +47,7 @@ public abstract class Character : MonoBehaviour
         {
             transform.parent.position = Vector2.MoveTowards(transform.parent.position, currentPos, fSpeed * Time.deltaTime);
             float distance = Vector2.Distance(currentPos, transform.parent.position); //currentPos and transform.parent.position need to snap to center of their current tile
+            
             if (distance <= 0f)
             {
                 if (path.Count > 0)

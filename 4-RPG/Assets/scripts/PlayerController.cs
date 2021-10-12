@@ -30,6 +30,8 @@ public class PlayerController : Character
 
     public Animator playerAnimator;
 
+    bool facingRight = true;
+
     protected bool isPathEmpty
     {
         get
@@ -45,20 +47,15 @@ public class PlayerController : Character
         }
     }
 
-    private void ChangeAnimation()
+    void Flip()
     {
-        /*if (!isPathEmpty)
-        {
-            AnimationState = 1;
-        }
-        else if (Health <= 0)
-        {
-            AnimationState = 2;
-        }
-        else
-        {
-            AnimationState = 0;
-        }*/
+        // Switch the way the player is labeled as facing
+        facingRight = !facingRight;
+
+        // Multiply the player's x local scale by -1
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     #region DEFAULT
@@ -92,6 +89,15 @@ public class PlayerController : Character
             playerAnimator.SetBool("AnimationChange", false);
         }
        
+        if (dir.x > 0 && facingRight)
+        {
+            Flip();
+        }
+        else if (dir.x < 0 && !facingRight)
+        {
+            Flip();
+        }
+
         base.Update();
     }
     #endregion
