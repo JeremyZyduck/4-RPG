@@ -1623,7 +1623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146163681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.52, y: -1.28, z: 0}
+  m_LocalPosition: {x: 5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365155271}
@@ -1773,7 +1773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293579891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.41, y: -3.58, z: 0}
+  m_LocalPosition: {x: 2, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365155271}
@@ -1845,7 +1845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &365155271
 Transform:
   m_ObjectHideFlags: 0
@@ -2044,6 +2044,7 @@ MonoBehaviour:
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 449782933}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 449782934}
   FollowObject: {fileID: 1309435818}
@@ -3040,6 +3041,7 @@ MonoBehaviour:
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 905885206}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 905885207}
   secondsToWait: 2
@@ -7062,7 +7064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118812679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.45, y: -3.47, z: 0}
+  m_LocalPosition: {x: 6, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365155271}
@@ -7188,6 +7190,7 @@ MonoBehaviour:
   fSpeed: 5
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1309435824}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1309435823}
   Health: 100
@@ -7205,7 +7208,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0020766258, y: -0.21530426}
@@ -7270,7 +7273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309435818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.56, z: 0}
+  m_LocalPosition: {x: 0.5419998, y: 0.77699995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1311906886}
@@ -8830,7 +8833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1654608946
 Transform:
   m_ObjectHideFlags: 0
@@ -8966,7 +8969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1841949480
 Transform:
   m_ObjectHideFlags: 0
@@ -8975,7 +8978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841949479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.56, z: 0}
+  m_LocalPosition: {x: 0.5419998, y: 0.77699995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1404662323}
@@ -8997,6 +9000,7 @@ MonoBehaviour:
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1841949483}
   route:
@@ -9057,6 +9061,7 @@ MonoBehaviour:
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1841949483}
   FollowObject: {fileID: 1309435818}
@@ -9070,7 +9075,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0020766258, y: -0.21530426}
@@ -9116,7 +9121,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5d6be7cbbd76a1542aa7e699bdd83e19, type: 3}
+  m_Sprite: {fileID: -3614819572521546596, guid: dd368af8a33ca414c80f2eced38280ce,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9142,6 +9148,7 @@ MonoBehaviour:
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 0}
   r2dCharPhysics: {fileID: 1841949483}
   secondsToWait: 0
@@ -9160,6 +9167,7 @@ MonoBehaviour:
   fSpeed: 3
   currentPos: {x: 0, y: 0, z: 0}
   astar: {fileID: 1841949482}
+  dir: {x: 0, y: 0, z: 0}
   tilemap: {fileID: 962227912}
   r2dCharPhysics: {fileID: 0}
   RandomMov: {fileID: 1841949487}
@@ -9168,7 +9176,6 @@ MonoBehaviour:
   MovementType: 1
   Health: 100
   Behavior: 0
-  deathAnim: {fileID: 0}
 --- !u!1 &1863536863
 GameObject:
   m_ObjectHideFlags: 0
@@ -9718,7 +9725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992305860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -1.28, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 365155271}

@@ -23,9 +23,6 @@ public class NPC : Character
     [SerializeField] //UNIMPLEMENTED
     private int Behavior = 0; //0: None //1: Friendly //2: Enemy
 
-    [SerializeField]
-    private Animation deathAnim;
-
     private void SetMovementType()
     {
         switch (MovementType)
@@ -58,23 +55,9 @@ public class NPC : Character
         }
     }
 
-    private void CheckHealth()
-    {
-        if (Health <= 0)
-        {
-            deathAnim.Play("Death");
-            if(!deathAnim.IsPlaying("Death"))
-            {
-                gameObject.SetActive(false);
-            } 
-        }
-    }
-
-
 
     protected override void Update()
     {
         SetMovementType();
-        CheckHealth();
     }
 }

@@ -33,12 +33,23 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     private Tilemap tilemap;
 
+    private bool roundedFlag;
 
     public void GetPath(Vector3 goal)
     {
+        roundedFlag = false;
+        Debug.Log("Goal " + goal);
         path = astar.Algorithm(transform.position, goal);
-        currentPos = path.Pop();
+
+        //Don't think this needs to be rounded
+        currentPos = RoundVector3(path.Pop());
+        //if (path.Peek() == null)
+        //{
+        //    transform.parent.position = Vector2.MoveTowards(transform.parent.position, RoundVector3(goal), fSpeed * Time.deltaTime);
+        //    path = null;
+        //}
         dir = (transform.parent.position - goal).normalized;
+        dir.Normalize();
     }
 
     private void Move()
@@ -57,10 +68,39 @@ public abstract class Character : MonoBehaviour
                 else
                 {
                     path = null;
-                    GameObject.Find("Player").GetComponent<PlayerController>().AnimationState = 0;
+                    if (gameObject.tag == "Player")
+                    {
+                        gameObject.GetComponent<PlayerController>().AnimationState = 0;
+                    }
                 }
             }
         }
+        else
+        {
+            path = null;
+        }
+    }
+
+    Vector3 RoundVector3(Vector3 goal)
+    {
+        Vector3 rounded;
+        if (goal.x > 0 && goal.y > 0)
+        {
+            rounded = new Vector3(Mathf.Ceil(goal.x), Mathf.Ceil(goal.y), goal.z);
+        }
+        else if (goal.x < 0 && goal.y > 0)
+        {
+            rounded = new Vector3(Mathf.Floor(goal.x), Mathf.Ceil(goal.y), goal.z);
+        }
+        else if (goal.x > 0 && goal.y < 0)
+        {
+            rounded = new Vector3(Mathf.Ceil(goal.x), Mathf.Floor(goal.y), goal.z);
+        }
+        else
+        {
+            rounded = new Vector3(Mathf.Floor(goal.x), Mathf.Floor(goal.y), goal.z);
+        }
+        return rounded;
     }
 
     
@@ -80,10 +120,24 @@ public abstract class Character : MonoBehaviour
     protected virtual void Update()
     {
         Move();
+        if (path == null && roundedFlag == false)
+        {
+
+            Vector3 rounded = RoundVector3(transform.parent.position);
+
+            Debug.Log("Rounded " + rounded);
+            transform.parent.position = Vector3.MoveTowards(transform.parent.position, rounded, fSpeed * Time.deltaTime);
+            if (transform.parent.position == rounded)
+            {
+                roundedFlag = true;
+            }
+            
+        }
     }
 
     private void FixedUpdate()
     {
+        
     }
     #endregion
 }

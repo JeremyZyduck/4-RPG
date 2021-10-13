@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 #endregion
 /*<SUMMARY>
  *Gets users keyboard inputs and 
@@ -76,7 +77,9 @@ public class InputManager : MonoBehaviour
                 if (hit.collider != null)
                 {
                     Debug.Log("collider not null");
-                    GameObject.Find("Player").GetComponent<PlayerController>().GetPath(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                    Vector3 goal = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    //Vector3 rounded = new Vector3(Mathf.Round(goal.x), Mathf.Round(goal.y), goal.z);
+                    GameObject.Find("Player").GetComponent<PlayerController>().GetPath(goal);
                     GameObject.Find("Player").GetComponent<PlayerController>().AnimationState = 1;
                 }
                 else

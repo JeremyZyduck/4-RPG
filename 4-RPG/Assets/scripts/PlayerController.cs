@@ -47,6 +47,16 @@ public class PlayerController : Character
         }
     }
 
+    //Void Auto-Attack
+    /*
+     * raycast left and right
+     * if one hits (with pref to right)
+     *      if enemy npc
+     *          grab npc health and decrease it
+     *          wait for animation to end
+     *      else ignore it
+     */
+
     void Flip()
     {
         // Switch the way the player is labeled as facing
